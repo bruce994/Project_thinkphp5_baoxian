@@ -1,0 +1,607 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<title>个人中心</title>
+<style type="text/css">
+body,html {
+    background-color: #f1f1f1;
+    padding: 0;
+    margin: 0;
+    height:35.9375rem
+}
+#top {
+    background-color: #ffffff;
+}
+#head {
+    height: 5rem;
+    border-bottom: 1px solid #eaeaea;
+    width: 100%;
+    display: table;
+    position: relative;
+}
+#headImg {
+    float: left;
+    height: 3.75rem;
+    width: 3.75rem;
+    border-radius: 50%;
+    border: 0.3125rem solid #f1f1f1;
+    margin: 6px 13px 0 15px;
+    background-size: 100%;
+}
+.icon {
+    background-size: 100%;
+    background-image: url("images/personalCenterNew.png?v=1");
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+#menberIcon {
+    background-position: 0 3px;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: none;
+}
+#info {
+    display: table-cell;
+    vertical-align: middle;
+    width: 75%;
+    text-align: left;
+}
+#nickName {
+    font-size: 15px;
+    color: #333333;
+}
+#motto {
+    font-size: 13px;
+    color: #939393;
+    padding-top: 0.3125rem;
+}
+.arrow {
+    background-position: 0 -346px;
+    width: 10px;
+    height: 1.25rem;
+    /*float: right;*/
+    padding-right: 15px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#numTab {
+    height: 3.75rem;
+    border-bottom: 1px solid #eaeaea;
+    display: table;
+    width: 100%;
+}
+.tab {
+    display: inline-block;
+    width: 50%;
+    /* float: left; */
+    text-align: center;
+    /* height: 100%; */
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+.tab p, #info p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.income:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: #eaeaea;
+}
+.number {
+    font-size: 15px;
+    color: #ff4e00;
+}
+.numberTip {
+    color: #888888;
+    font-size: 12px;
+    padding-top: 0.3125rem;
+}
+.item {
+    height: 2.8125rem;
+    background-color: #ffffff;
+    position: relative;
+    text-align: left;
+    display: table;
+    width: 100%;
+}
+.itemImg {
+    height: 100%;
+    width: 1.25rem;
+    margin: 0 10px;
+}
+#myOrder {
+    margin-top: 5px;
+}
+#salesItem {
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    margin: 10px 0 0.3125rem 0;
+    display: none;
+}
+#qrcodeItem {
+    margin-top: 0.3125rem;
+}
+#visitorItem,#rankItem {
+    border-bottom: 1px solid #eaeaea;
+}
+#messageCenterItem {
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    margin: 0.3125rem 0 0.3125rem 0;
+}
+#menberItem {
+    margin-top: 0.3125rem;
+    border-top: 1px solid #eaeaea;
+    display: none;
+}
+#integrateMarketItem {
+    border-bottom: 1px solid #eaeaea;
+}
+#sales {
+    background-position: 0 -26px;
+}
+#qrcode {
+    background-position: 0 -65px;
+}
+#microshop {
+    background-position: 0 -105px;
+}
+#visitor {
+    background-position: 0 -145px;
+}
+#member {
+    background-position: 0 -186px;
+}
+#integrateMarket {
+    background-position: 0 -226px;
+}
+#messageCenter {
+    background-position: 0 -297px;
+}
+#rank {
+    background-position: 0 -332px;
+}
+#continued {
+    float: right;
+    color: #c3c3c3;
+    font-size: 0.75rem;
+    margin-right: 15px;
+    line-height: 2.8125rem;
+    position: absolute;
+    right: 0;
+}
+.itemWriting {
+    font-size: 0.9375rem;
+    color: #333333;
+    line-height: 2.8125rem;
+    display: table-cell;
+    width: 88%;
+    vertical-align: middle;
+}
+#dot {
+    display: none;
+    background-color: #ff0000;
+    border-radius: 50%;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    position: absolute;
+    right: 40px;
+    top: 8px;
+}
+#hot{
+    display:inline-block;
+    width: 1.4375rem;
+    height: 1.4375rem;
+    background-position: 0 -435px;
+    position: absolute;
+    top: 1px;
+    left:118px;
+}
+.line {
+    border-bottom: 1px solid #eaeaea;
+}   
+.redPot {
+    width: 24px;
+    height: 24px;
+    background-color: #ff0000;
+    border-radius: 8px;
+    display: none;
+    position: absolute;
+    top: 20%;
+    right: 40px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 24px;
+    color: #FFF;
+    font-size: 18px;
+}  
+</style>
+</head>
+<body>
+<div id="top">
+    <div id="head" onclick="goMessage2();">
+        <div id="headImg"></div>
+        <div id="info">
+            <span id="nickName"></span>
+            <div id="menberIcon" class="icon"></div>
+            <p id="motto"></p>
+        </div>
+        <div class="arrow icon"></div>
+    </div>
+    <div id="numTab">
+        <div class="tab income" onclick="userManger()">
+            <p class="number" id="income">0</p>
+            <p class="numberTip">我的客户</p>
+        </div>
+        <!--<div class="tab" id="line "></div>-->
+        <div class="tab" onclick="scoreTask();">
+            <p class="number" id="integrate">0</p>
+            <p class="numberTip">积分</p>
+        </div>
+    </div>
+</div>
+<div class="item" id="myOrder" onclick="gotoOrder();">
+    <div class="icon itemImg" id="sales"></div>
+    <span class="itemWriting">我的订单</span>
+    <div class="arrow icon"></div>
+</div>
+<div class="item" id="salesItem">
+    <div class="icon itemImg" id="sales"></div>
+    <span class="itemWriting">保单销售</span>
+    <div class="arrow icon"></div>
+</div>
+<div class="item" id="qrcodeItem" onclick="enterMiroshop();">
+    <div class="icon itemImg" id="qrcode"></div>
+    <span class="itemWriting line">二维码</span>
+    <div class="arrow icon"></div>
+</div>
+<div class="item" onclick="microshop();">
+    <div class="icon itemImg" id="microshop"></div>
+    <span class="itemWriting line">我的微站</span>
+    <div class="arrow icon"></div>
+</div>
+<div class="item" id="visitorItem" onclick="fangkeshuju();">
+    <div class="icon itemImg" id="visitor"></div>
+    <span class="itemWriting">访客明细</span>
+    <div class="arrow icon"></div>
+</div>
+<div class="item" id="rankItem" onclick="rankList();">
+    <div class="icon itemImg" id="rank"></div>
+    <span class="itemWriting">推广排行榜</span>
+    <!-- <div id="hot" class="icon"></div> -->
+    <div class="arrow icon"></div>
+</div>
+<div class="item" id="messageCenterItem" onclick="zhanneixin();">
+    <div class="icon itemImg" id="messageCenter"></div>
+    <span class="itemWriting">消息中心</span>
+    <div class="redPot"></div>
+    <div class="arrow icon"></div>
+    <div id="dot"></div>
+</div>
+<div class="item" id="menberItem">
+    <div class="icon itemImg" id="member"></div>
+    <span class="itemWriting line">会员</span>
+    <div class="arrow icon"></div>
+</div>
+<div class="item" id="integrateMarketItem" onclick="scoreShop();">
+    <div class="icon itemImg" id="integrateMarket"></div>
+    <span class="itemWriting">积分商城</span>
+    <div class="arrow icon"></div>
+    <span id="continued"><!-- 敬请期待 --></span>
+</div>
+<div>
+    <div id="publishItem" cellspacing="0" style="display: none;z-index: 9999999;width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background: rgba(0, 0, 0, 0.8);">
+        <div style="position: fixed; top:20%; left:0; width:100%;">
+            <div style="text-align: center;color: #fff;font-size:16px;">
+                <p>写好的文章发到朋友圈都可以带名片</p>
+                <p>传播哦~！</p>
+            </div>
+            <div style="width: 230px;margin: 0 auto;">
+                <div style="width:76px; float:left;text-align:center;">
+                    <a href="#" onclick="window.location.href='/family_chat/shop/publish.jsp?activeType=1&amp;skipCode=0&amp;from=personalCenterNew'" style="text-decoration: none;">
+                        <img src="/family_chat/shop/images/p_product.png" style=" margin-bottom:10px;color:#fff;width:70px;">
+                        <p style="text-align:center;text-shadow:none; font-size:16px;color:#fff;width:100%;">原创</p>
+                    </a>
+                </div>  
+                <div style="width:76px; float:left;  margin-left: 75px;text-align: center;">
+                    <!-- testShare.jsp -->
+                    <a href="#" onclick="window.location.href='/family_chat/copyContent/copyContent.jsp'" style="text-decoration: none;">
+                        <img src="/family_chat/shop/images/p_activity.png" style=" margin-bottom:10px;color:#fff;width:70px;">
+                        <p style="text-align:center;text-shadow:none; font-size:16px;color:#fff;width:100%;">转载</p>
+                    </a>
+                </div>
+                <div style="clear:both"></div>
+                <div style="text-align: center;font-family: '微软雅黑';color: #fff;font-size:14px; margin-right:-40px; margin-left: -40px;">
+                    <p>去pc端编辑原创文章<br>
+                    在pc端输入网址，点击右上角"发布文章"<br>
+                    http://zhanyebao.pa18.com/</p>
+                </div>
+                <div style="width:100%;text-align:center;margin-top: 1.25rem;">
+                    <img src="/family_chat/shop/images/close_ceng.png" style="width: 25px;" onclick="publish()">
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+    <!-- #ff4e00 -->
+    <div style="width: 100%;height:60px;border-top:1px solid #f1f1f1;background:#fff;color: #888888;font-family: '微软雅黑';font-size: 12px;position: fixed;bottom: 0px;text-align: center;" >
+        <div id="tab1" style="float:left;text-align: center;padding:10px auto;padding-bottom: 10px;margin-left:20px;" onclick="window.location.href='/family_chat/shop/infoList.jsp'">
+            <div id="tabImage1" style="background: url(/family_chat/shop/images/litter_f.png) no-repeat;background-size:265%;width: 40px;height: 40px;display:inline-block;background-position: -30px -80px ;"></div>
+            <div class="clBar" style="text-align: center;">                 
+                <span id="tabText1" style="display: inline-block;">资讯素材</span>
+            </div>
+        </div>
+        <div id="tab2" style="float:left;text-align: center;padding:10px auto;padding-bottom: 10px;" onclick="window.location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2f8a32d90ec8767c&redirect_uri=https%3A%2F%2Fsales.yun.pingan.com%2Ffamily_chat%2Fask%2FaskMain%2Femployee.do&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect'">
+            <div id="tabImage2" style="background: url(/family_chat/shop/images/litter_f.png) no-repeat;background-position:center;background-size:265%;width: 40px;height: 40px;display:inline-block;background-position:-32px -184px"></div>
+            <div  class="clBar" style="text-align: center;">                    
+                <span id="tabText2" style="display: inline-block;">金橙问问</span>
+            </div>
+        </div>
+        <div id="tab3" style="float:right;text-align: center;padding:10px auto;padding-bottom: 10px;margin-right:20px;" onclick="window.location.href='/family_chat/shop/personalCenterNew.jsp'">
+            <div id="tabImage3" style="background: url(/family_chat/shop/images/litter_f.png) no-repeat;background-size:265%;width: 40px;height: 40px;display:inline-block;background-position:-32px -415px"></div>
+            <div class="clBar" style="text-align: center;">                 
+                <span id="tabText3" style="display: inline-block;">个人中心</span>
+            </div>
+        </div>
+        <div id="tab4" style="float:right;text-align: center;padding:10px auto;padding-bottom: 10px;" onclick="window.location.href='/family_chat/ask/zhanyegongju.jsp'">
+            <div id="tabImage4" style="background: url(/family_chat/shop/images/litter_f.png) no-repeat;background-size:265%;width: 40px;height: 40px;display:inline-block;background-position: -33px -305px;"></div>
+            <div  class="clBar" style="text-align: center;">                    
+                <span id="tabText4" style="display: inline-block;">展业工具</span>
+            </div>
+        </div>
+        <div style=""></div>
+        <div id="pencilIcon" style="display:inline-block;border: 4px solid #ff4e00;background-color:#ff4e00;background-image: url(/family_chat/shop/images/litter_f.png);background-repeat: no-repeat;background-size:200%;width: 46px;height:46px;border-radius:27.5px;margin-top: -10px;background-position: -23px -417px;"
+            onclick="publish()">
+        </div>
+    </div>
+
+</div>  
+</body>
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/isblack.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="../static-min/js/fc_msg-min.js"></script>
+<script type="text/javascript" src="../static-min/js/sales-common-min.js" ></script>
+<script type="text/javascript">
+
+//获得系统basePath
+function getBasePath() {
+    var local = window.location;  
+    var contextPath = local.pathname.split("/")[1];  
+    var basePath = local.protocol+"//"+local.host+"/"+contextPath;  
+    return basePath;
+}
+//访问者的openid
+var visitorOpenID = 'ovOzrs_GVFO4qGMy8aT3I8BkF0do';
+var openId, shareOpenId;
+var isCheck="N";
+var errCount = 0;
+var contentErrCount = 0;
+var microshopQRImg ='';
+var isSubmit ="";//防重复提交
+$('#tabImage3').css('background-position','-32px -362px');
+$('#tabText3').css('color','#ff4e00');
+$('.clBar').css('margin-top','-5px');
+var isOpen = false;
+function publish(){
+    recordClick('52');
+    if(isCheck=='N'){
+        complete();
+        return ;
+    } 
+    if(isOpen){
+        $("#publishItem").hide();
+        isOpen = false;
+        $(document).data("lockScreen",false);//取消锁屏
+    }else {
+        $(document).data("lockScreen",true);//锁屏
+        $("#publishItem").show();
+        isOpen = true;
+    }
+}
+function getUrlParam(paramName) {
+    var url = window.location.href;
+    var oRegex = new RegExp('[\?&]' + paramName + '=([^&]+)', 'i');
+    var oMatch = oRegex.exec(url);
+    if (oMatch && oMatch.length > 1) {
+        return decodeURI(oMatch[1]);
+    } else {
+        return "";
+    }
+}
+
+function showClient() {
+    var url = "../getMyWXInfo.do";
+    $.ajax({
+url : url,
+type : 'POST',
+dataType : 'json',
+async : true,
+success : function(data) {
+console.log(data.flag);
+if(data.flag=="fail"){  //没有创建名片
+
+}else{
+var headImage = data.headImage;
+var img = headImage;
+isCheck="Y";
+$("#nickName").text(data.cardName);
+$("#motto").text(data.motton);
+$("#headImg").css("background-image", "url("+img+")");
+}
+},
+error : function(e) {
+if(errCount==3){
+//alert("网络异常");
+    errCount = 0;
+    return;
+}
+errCount++;
+showClient();
+getPersonalCenterData();
+//getIfNoRead();
+//alert(e);
+//alert("网络异常");
+}
+});
+}
+
+$(document).ready(function(){
+
+        currUrl = window.location.href;
+        openId = "ovOzrs_GVFO4qGMy8aT3I8BkF0do";
+        if("" == openId || null == openId || undefined == openId){
+        openId = "";
+        } else {
+        showClient();
+        getIfShowOrder();
+        getPersonalCenterData();
+        //getIfNoRead();
+        if(hasCache()){
+        fcConfirm("您在编辑文章的时候意外退出了，是否需要继续浏览该页面？", function(type) {
+            if (type == 'ok') {
+            window.location.href='publish.jsp?activeType=1&skipCode=0&from=personalCenterNew';
+            }
+            if(type == "no"){
+            localStorage.removeItem("Content_Cache");
+            localStorage.removeItem("Header_Cache");
+            localStorage.removeItem("Content_ValueCache");
+            localStorage.removeItem("articleCache");
+            }
+            });
+        }
+        }
+        var marginValue =($(window).width()-4*($('#tab2').width())-55-20)/4;
+        $('#tab2').css('margin-left',marginValue+'px');
+        $('#tab4').css('margin-right',marginValue+'px');
+});
+
+function getIfShowOrder() {
+    // 判断是否显示我的订单
+    var url = "/family_chat/Common/switch.do";
+    $.ajax({
+url : url,
+type : 'POST',
+dataType : 'json',
+async : true,
+data : {
+"key" : "switch_order_personalCenter"
+},
+success : function(data) {
+if(data.onOrOff == "on"){  
+$("#myOrder").show();
+$("#myOrder .itemWriting").show();
+$("#myOrder .itemWriting").html("我的订单");
+} else {
+$("#myOrder").hide();
+$("#myOrder .itemWriting").hide();
+}
+},
+error : function(e) {
+$("#myOrder").hide();
+}
+});
+}
+
+function hasCache(){
+    return (localStorage.getItem("Content_Cache") || localStorage.getItem("Header_Cache"))&&(localStorage.getItem("articleCache")=="personalCenterNew"); 
+}
+
+function getPersonalCenterData() {
+    var url = getBasePath()+"/getPersonalCenterData.do";
+    $.ajax({
+url : url,
+type : 'POST',
+dataType : 'json',
+async : true,
+data : {
+"openId" : visitorOpenID
+},
+success : function(data) {
+var unReadCount = data.unReadCount;
+if(unReadCount > 0) {
+$(".redPot").css("display", "inline-block");
+$(".redPot").html(data.unReadCount);
+} else {
+$(".redPot").css("display", "none");
+}
+$("#income").html(data.customerNum);
+$("#integrate").html(data.score);
+},
+error : function(e) {
+// alert("获取个人中心数据异常");
+        }
+});
+}
+function complete() {
+    fcAlert("请先完善个人信息 ");
+}
+function microshop() {
+    window.location.href= "https://"+document.domain+"/family_chat/shop/microshop.jsp?openId=ovOzrs_GVFO4qGMy8aT3I8BkF0do";
+}
+function fangkeshuju() {
+    window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2f8a32d90ec8767c&redirect_uri=https%3A%2F%2Fsales.yun.pingan.com%2Ffamily_chat%2Fshop%2FmicroshopStatistics.jsp&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+}
+function enterMiroshop(){
+    window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2f8a32d90ec8767c&redirect_uri=https%3A%2F%2Fsales.yun.pingan.com%2Ffamily_chat%2F%2Fshop%2Fmicroshop.jsp%3Fcome_from%3D1%26openId%3DovOzrs_GVFO4qGMy8aT3I8BkF0do&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+}
+function zhanneixin() {
+    window.location.href="messageCenter.jsp";
+}
+function gotojifen() {
+    window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2f8a32d90ec8767c&redirect_uri=https%3A%2F%2Fsales.yun.pingan.com/family_chat%2Fshop%2Fintegrate.jsp&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+}
+function gotoOrder() {
+    window.location.href="https://"+document.domain+"/family_chat/myorder/html/index.html?visitTag=agent_jm";
+}
+function rankList(){
+    window.location.href="praiseList.html?visitTag=agent_jm";
+}
+function scoreShop(){
+    window.location.href="integralMall.html";
+}
+
+function scoreTask(){
+    window.location.href="integrate.jsp";
+}
+
+function userManger(){
+    window.location.href="customerManage.jsp";
+}
+
+function goMessage2(){
+    window.location.href="modifyPersonalData.jsp?pagesoure=4&returnUrl=";
+}
+</script>
+</html>

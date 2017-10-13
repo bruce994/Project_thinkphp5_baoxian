@@ -1,0 +1,4 @@
+/* 取消点击灰色阴影效果 */
+div {
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}

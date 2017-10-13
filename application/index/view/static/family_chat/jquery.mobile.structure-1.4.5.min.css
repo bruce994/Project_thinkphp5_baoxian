@@ -1,0 +1,57 @@
+
+
+
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>该页面没有找到</title>
+<script type="text/javascript"
+		src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<style type="text/css">
+</style>
+</head>
+<body style="color: #535353;">
+  <div class="content" style="
+    height: 100%;
+    width: 100%;      
+">
+  <div style="
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #D6E407;
+  margin: 0 auto;
+  margin-top: 60px;
+  color: #fff;
+">
+    <span style="
+    display: inline-block;
+    line-height: 150px;
+    font-style: oblique;
+    font-size: xx-large;
+"><strong>sorry</strong></span>
+  </div>
+</div>
+<div style="
+    margin-top: 20px;
+    text-align: center;
+    line-height: 20px;
+    font: 14px SimHei;    line-height: 150%;    color: #666;
+">您访问的页面不存在<br><sapn id="time">5</sapn>s后自动关闭...</div>
+<script>
+var time = 5;
+setInterval(function(){
+	time--;
+	if(time>-1){
+		document.getElementById("time").innerHTML = time;
+	}
+	if(time==0){
+		wx.closeWindow();
+	}
+}, 1000);
+</script>
+
+
+</body></html>

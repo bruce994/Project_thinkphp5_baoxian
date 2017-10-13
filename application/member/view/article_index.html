@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{:config("config.ss_site_name")}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="{:config("config.ss_web_root")}/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{:config("config.ss_web_root")}/misc/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{:config("config.ss_web_root")}/misc/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{:config("config.ss_web_root")}/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{:config("config.ss_web_root")}/dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="{:config("config.ss_web_root")}/misc/html5shiv.min.js"></script>
+        <script src="{:config("config.ss_web_root")}/misc/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .color-palette {
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+      }
+      .color-palette-set {
+        margin-bottom: 15px;
+      }
+      .color-palette span {
+        display: none;
+        font-size: 12px;
+      }
+      .color-palette:hover span {
+        display: block;
+      }
+      .color-palette-box h4 {
+        position: absolute;
+        top: 100%;
+        left: 25px;
+        margin-top: -40px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        display: block;
+        z-index: 7;
+      }
+    </style>
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      {include file="head" /}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+              {$head}
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="{:url("Index/index")}"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li class="active">{$head}</li>
+          </ol>
+        </section>
+
+       <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">资讯链接： {:config("config.ss_site_domain")}{:trim(url("index/article/index",["mid"=>$mid]),'/')} </h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" method="post" id="form1" action="" class="pageForm required-validate">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>标题：</label>
+                        <input type="text" name="title"  class="form-control"  value="{$vo.title}">
+                    </div>
+
+                <div class="form-group">
+                    <label>微信弹出关键字：</label>
+                    <input type="text" name="keyword"  class="form-control"  value="{$vo.keyword}">
+                </div>
+
+                <div class="form-group">
+                    <label>微信描述：</label>
+                    <input type="text" name="wx_info"  class="form-control"  value="{$vo.wx_info}">
+                </div>
+
+
+                  <div class="form-group">
+                      <label>微信弹出图片：</label>
+                      <div class="input-group">
+                          <input type="text" id="wx_picurl" name="wx_picurl" class="form-control required" value="{$vo.wx_picurl}">
+                          <span class="input-group-addon"><a href="javascript:void();" onclick="upyunWapPicUpload('wx_picurl')"><i class="fa fa-fw fa-upload"></i>点击上传</a></span>
+                          <span class="input-group-addon"><a href="javascript:void();" onclick="viewImg('wx_picurl')"><i class="fa fa-fw fa-share"></i>预览</a></span>
+                      </div>
+                  </div>
+
+
+                  <div class="form-group">
+                      <label>模板界面风格：</label>
+                      <div class="input-group">
+                          <?php
+                          $tmp = '';
+                          foreach($list as $tt){
+                          if($tt['id'] == $vo['template']){
+                          $tmp = $tt['title'];
+                          }   
+                          }
+
+                          //自定义模板
+                          if(empty($tmp) && $vo['template']){
+                          $tmp = '您的个性化模板';
+                          }
+                          //END
+
+                          ?>
+                          <input type="text" id="template_a" class="form-control" value="{:$tmp}" readonly>
+                          <span class="input-group-addon"><a href="javascript:void();" data-toggle="modal" data-target="#myModal88"><i class="fa fa-fw fa-check-square-o"></i>点击选择模板</a></span>
+                      </div>
+                  </div>  
+
+<!--dialog-->
+<style>
+.modal-dialog {
+  width: 95%;
+  height: auto;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  border-radius: 0;
+}
+</style>
+         <div id="myModal88" class="modal fade" tabindex="-1" role="dialog">
+             <div class="modal-dialog " role="document">
+                 <div class="modal-content">
+                     <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title">模板选择</h4></div>
+
+                     <div class="modal-body" style="text-align:center;">
+
+                         <div class="container-fluid">
+                             <div class="row">
+                                 {volist name="list" id="list"}
+                                     <neq name="list.picurl" value="">
+                                         <div class="col-md-4" >
+                                             <p style="text-align:center;">
+                                             <b>{$list.title}</b>
+                                             </p>
+                                             <p style="text-align:center;">
+                                             <img src="{$list.picurl}" width="320" height="580">
+                                             </p>
+                                             <p style="text-align:center;border-bottom-style: solid;border-width: 1px;padding-bottom: 5px;">
+                                             选中：<input type="radio" id="template{$list.id}" value="{$list.id}" name="template" <?php if($list['id'] == $vo['template']){ ?>checked <?php } ?> onclick="template_cc('{$list.title}')">
+                                             </p>               
+                                         </div>
+                                     </neq>
+                                 {/volist}
+
+                                 <?php  if(!empty($_SESSION["member"]['m_template'])){  ?>
+                                 <div class="col-md-4" >
+                                     <p style="text-align:center;">
+                                     <b>您的个性化模板</b>
+                                     </p>
+                                     <p style="text-align:center;">
+                                     <img src="/Public/images/gexinghua.png" width="320" height="580">
+                                     </p>
+                                     <p style="text-align:center;border-bottom-style: solid;border-width: 1px;padding-bottom: 5px;">
+                                     选中：<input type="radio" id="template{:$_SESSION["member"]['m_id']}" value="{:$_SESSION["member"]['m_template']}" name="template" <?php if($_SESSION["member"]['m_template'] == $vo['template']){ ?>checked <?php } ?> onclick="template_cc('您的个性化模板')">
+                                     </p>               
+                                 </div>
+                                 <?php } ?>
+
+                             </div>
+                         </div>                 
+
+
+                     </div>
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                     </div>
+                 </div>
+             </div>
+         </div>            
+         <!--END dialog-->
+
+         <script type="text/javascript">
+            function template_cc(vv){
+                $("#myModal88").modal('hide');
+                $("#template_a").val(vv);
+            }
+         </script>
+
+
+
+
+
+
+
+
+
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <button id="sub" class="btn btn-primary">提交</button>
+                  </div>
+                </form>
+              </div><!-- /.box -->
+
+            </div><!--/.col (left) -->
+
+          </div>   <!-- /.row -->
+        </section><!-- /.content -->
+
+
+
+      </div><!-- /.content-wrapper -->
+
+
+      {include file="footer" /}
+
+
+    </div><!-- ./wrapper -->
+
+
+    <script src="{:config("config.ss_web_root")}/artDialog/jquery.artDialog.js?skin=default"></script>
+    <script src="{:config("config.ss_web_root")}/artDialog/plugins/iframeTools.js"></script>
+    <script src="{:config("config.ss_web_root")}/upyun.js?2013"></script>
+
+
+
+
+  </body>
+</html>

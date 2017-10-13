@@ -1,0 +1,154 @@
+@charset "utf-8";
+	.bottomCard{
+		display: inline-block; 
+		width:98.5%;
+		border:2px solid #f96926; 
+		border-radius: 8px;
+		height:160px;
+		bottom:0px;
+		padding:0px;
+		position: relative; 
+		font-family: '微软雅黑';
+	}
+	.bottomCard .cardName{
+		font-size:18px;
+		color:#ff4f00;
+		display:block;
+		margin-top:15px;
+	}
+	.bottomCard .cardCity{
+		font-size:13px;
+		color:#888888;
+		margin-top:7px;
+		display:block;
+	}
+	#cardImg1{
+		width: 75px; 
+		height: 75px;
+		display: inline-block;
+		border-radius: 37px; 
+		overflow: hidden; 
+		line-height: 48px; 
+		float: left;
+		background-image:url(../shop/articleImg/person.png); 
+		background-size:contain; 
+		background-position: center;
+		margin:17px 15px;
+		border:2px solid #f96926;
+	}
+	#motton{
+		display:inline-block;
+		font-size:13px;
+		color:#888888;
+		margin-top:10px;
+		overflow : hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+	.phoneArea{
+		height:45px;
+		/* width:100%; */
+		width:101%;
+		position:absolute;
+		bottom:0px;
+		right:-2px;
+		position:absolute;
+		background-color: #f96926;
+		display:inline-block;
+		vertical-align:middle;
+		/* z-index:9999; */
+		border-bottom-right-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+	.phoneNum{
+		color:#f1f1f1;
+		font-weight:bold;
+		font-size:16px;
+		display:inline-block;
+		float:left;
+		line-height:16px;
+		padding:15px 0 0 15px;
+		font-family: '微软雅黑';
+	}
+	.consulting{
+		display:inline-block;
+		background-color: #f96926;
+		background-size:90px 40px;
+		position: absolute;
+		right:10px;
+		top:15px;
+		width: 90px;
+		height: 40px;
+		border-radius:4px;
+		font-size:15px;
+		font-family: '微软雅黑';
+		/* font-weight: bold; */
+		font-weight:normal;
+		color:#f1f1f1;
+		vertical-align: middle;
+		line-height: 40px;
+		text-align: center;
+		text-shadow: none !important;
+	}
+	.bottomPhone{
+		float:right;
+		display:inline-block;
+		width:89px;
+		height:25px;
+		border-left: 1px solid #fea880;
+		border-right: 1px solid #fea880;
+		margin-top:10px;
+		margin-right:20px;
+		text-align: center;
+	}
+	.bottomPhone .phone{
+		display:inline-block;
+		background:url(../shop/articleImg/bottomPhone.png) no-repeat center center; 
+		background-size: cover; 
+		background-position: center;
+		width:25px;
+		height:25px;
+	}
+	.elli{
+		overflow : hidden;
+	  	text-overflow: ellipsis;
+	  	display: -webkit-box;
+	  	-webkit-line-clamp: 2;
+	  	-webkit-box-orient: vertical;
+	}
+	::-webkit-input-placeholder{color:#b3b3b3;padding-left:15px;}
+	::-moz-placeholder{color:#b3b3b3;padding-left:15px;}
+	:-moz-placeholder{color:#b3b3b3;padding-left:15px;}
+	input{
+		background-color: #f6f6f6;
+	}
+	.dialoge{
+		border-radius:5px;
+		width:270px;
+		height:240px;
+		display:inline-block;
+		background-color:#FFFFFF;
+		text-align: center;
+		margin-top:120px;
+		margin-bottom:100px;
+		position:relative;
+	}
+	.consultingDialect{
+		display:inline-block;
+		color:#b3b3b3;
+		font-size:15px;
+		border-radius:8px;
+		border:1px solid #dddddd;
+		width:85%;
+		height:30px;
+	}
+	.dialectBottom{
+		float:right;
+		display:inline-block;
+		width:57px;
+		height:25px;
+		border-left: 1px solid #fea880;
+		margin-top:12px;
+	}
