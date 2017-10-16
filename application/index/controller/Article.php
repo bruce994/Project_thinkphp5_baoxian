@@ -25,6 +25,9 @@ public function index()
     }elseif(input('act') == 'list'){
 
          $map1['status'] = ['=','1'];
+         if(input("typeid")){
+             $map1['typeid'] = ['=',input("typeid")];
+         }
          $list = Db::name("article_list")->where(array_merge($map,$map1))->order(['addtime'=>'desc'])->paginate(input("pageSize"), false, ['query' => Request::instance()->param()]);
         foreach($list as $dd){
                     $data[] = ["summary"=>"","tabNum"=>"","updatedDate"=>"","infoType"=>"时事理财","effectDate"=>null,"infoCode"=>"","showCover"=>"2","production"=>"","updatedBy"=>"","content"=>"","id"=>$dd['id'],"author"=>"人民日报","relayCount"=>$dd['share'],"coverImgUrl"=>$dd['picurl'],"originalLink"=>"","title"=>$dd['title'],"browseCount"=>$dd['view'],"createdBy"=>"","cancleDate"=>null,"adFrom"=>"","isUp"=>"1","shortName"=>"","createdDate"=>date("Y-m-d H:i:s",$dd['addtime'])];

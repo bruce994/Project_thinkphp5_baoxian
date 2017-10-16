@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"/var/www/html/www/whyaojin.cn/application/index/view/article_index.html";i:1507610103;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"/var/www/html/www/whyaojin.cn/application/index/view/article_index.html";i:1508129375;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -673,7 +673,7 @@ function getInfoData(){
     if("全部" != infoType){
         tp = infoType;
     }
-    var url = "<?php echo url("article/index",["act"=>"list","mid"=>$fan["mid"]]); ?>";
+    var url = "<?php echo url("article/index",["act"=>"list","mid"=>$fan["mid"],"typeid"=>input("typeid")]); ?>";
     $.ajax({
         url : url,
         type : 'POST',

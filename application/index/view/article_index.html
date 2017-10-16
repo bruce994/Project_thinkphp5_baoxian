@@ -672,7 +672,7 @@ function getInfoData(){
     if("全部" != infoType){
         tp = infoType;
     }
-    var url = "{:url("article/index",["act"=>"list","mid"=>$fan["mid"]])}";
+    var url = "{:url("article/index",["act"=>"list","mid"=>$fan["mid"],"typeid"=>input("typeid")])}";
     $.ajax({
         url : url,
         type : 'POST',

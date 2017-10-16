@@ -25434,3 +25434,300 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2017-10-13T23:40:02+08:00 ] 192.168.0.5 66.249.66.220 GET /index.php?g=Apps&m=Wap&a=Lists&classid=362&token=jbytpr1408886116&p=-1836
+[ log ] bxwyx.com/index.php?g=Apps&m=Wap&a=Lists&classid=362&token=jbytpr1408886116&p=-1836 [运行时间：0.005964s][吞吐率：167.67req/s] [内存消耗：388.59kb] [文件加载：38]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'bxwyx.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'from' => 'googlebot(at)googlebot.com',
+  'user-agent' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+  'accept-encoding' => 'gzip,deflate,br',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'g' => 'Apps',
+  'm' => 'Wap',
+  'a' => 'Lists',
+  'classid' => '362',
+  'token' => 'jbytpr1408886116',
+  'p' => '-1836',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/html/www/whyaojin.cn/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:42:26+08:00 ] 192.168.0.5 66.249.66.218 GET /index.php?g=Apps&m=Wap&a=Lists&classid=363&token=jbytpr1408886116&p=-3
+[ log ] bxwyx.com/index.php?g=Apps&m=Wap&a=Lists&classid=363&token=jbytpr1408886116&p=-3 [运行时间：0.005150s][吞吐率：194.18req/s] [内存消耗：388.60kb] [文件加载：38]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'bxwyx.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'from' => 'googlebot(at)googlebot.com',
+  'user-agent' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+  'accept-encoding' => 'gzip,deflate,br',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'g' => 'Apps',
+  'm' => 'Wap',
+  'a' => 'Lists',
+  'classid' => '363',
+  'token' => 'jbytpr1408886116',
+  'p' => '-3',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/html/www/whyaojin.cn/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:46:10+08:00 ] 192.168.0.5 140.207.54.76 POST /index.php/index/Weixin/index/token/gh_1880d6e3d406.html?signature=5c15d189a5b522c2bca009b8e5126fbc137afdc2&timestamp=1507909570&nonce=1122304536&openid=oMD5at1-07PV3Hf4dtBPqyA4Wk2U
+[ log ] whyaojin.cn/index.php/index/Weixin/index/token/gh_1880d6e3d406.html?signature=5c15d189a5b522c2bca009b8e5126fbc137afdc2&timestamp=1507909570&nonce=1122304536&openid=oMD5at1-07PV3Hf4dtBPqyA4Wk2U [运行时间：0.010219s][吞吐率：97.86req/s] [内存消耗：641.33kb] [文件加载：50]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Weixin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'whyaojin.cn',
+  'pragma' => 'no-cache',
+  'content-length' => '280',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'signature' => '5c15d189a5b522c2bca009b8e5126fbc137afdc2',
+  'timestamp' => '1507909570',
+  'nonce' => '1122304536',
+  'openid' => 'oMD5at1-07PV3Hf4dtBPqyA4Wk2U',
+  'token' => 'gh_1880d6e3d406',
+)
+[ info ] [ RUN ] app\index\controller\Weixin->index[ /var/www/html/www/whyaojin.cn/application/index/controller/Weixin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000516s ] mysql:dbname=whyaojin;host=mysql;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_member` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT `m_id`,`m_username`,`m_isSubscribe`,`m_isConnent`,`m_isReply`,`m_appid`,`m_appsecret` FROM `tp_member` WHERE  (  m_wxid = 'gh_1880d6e3d406' ) LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tp_reply` [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT `id`,`typeid`,`title`,`picurl`,`jumpUrl`,`description` FROM `tp_reply` WHERE  (  mid = '3' and keyword=''  ) LIMIT 1 [ RunTime:0.000358s ]
+
+---------------------------------------------------------------
+[ 2017-10-13T23:48:11+08:00 ] 192.168.0.5 106.11.154.164 GET /index.php?a=content&g=Apps&id=23339&m=Wap&token=iwpcqt1419266970
+[ log ] bxwyx.com/index.php?a=content&g=Apps&id=23339&m=Wap&token=iwpcqt1419266970 [运行时间：0.004701s][吞吐率：212.71req/s] [内存消耗：388.28kb] [文件加载：38]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn,en-us,zh-tw,en-gb,en;',
+  'host' => 'bxwyx.com',
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'connection' => 'Keep-Alive',
+  'user-agent' => 'YisouSpider',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'a' => 'content',
+  'g' => 'Apps',
+  'id' => '23339',
+  'm' => 'Wap',
+  'token' => 'iwpcqt1419266970',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/html/www/whyaojin.cn/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:48:11+08:00 ] 192.168.0.5 106.11.154.164 GET /index.php/index/article/index.html
+[ log ] bxwyx.com/index.php/index/article/index.html [运行时间：0.006283s][吞吐率：159.16req/s] [内存消耗：458.80kb] [文件加载：48]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'bxwyx.com',
+  'user-agent' => 'YisouSpider',
+  'connection' => 'Keep-Alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /var/www/html/www/whyaojin.cn/application/view/msg.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:53:12+08:00 ] 192.168.0.5 106.11.154.164 GET /index.php?a=content&g=Apps&id=23315&m=Wap&token=iwpcqt1419266970
+[ log ] bxwyx.com/index.php?a=content&g=Apps&id=23315&m=Wap&token=iwpcqt1419266970 [运行时间：0.004909s][吞吐率：203.71req/s] [内存消耗：388.28kb] [文件加载：38]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn,en-us,zh-tw,en-gb,en;',
+  'host' => 'bxwyx.com',
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'connection' => 'Keep-Alive',
+  'user-agent' => 'YisouSpider',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'a' => 'content',
+  'g' => 'Apps',
+  'id' => '23315',
+  'm' => 'Wap',
+  'token' => 'iwpcqt1419266970',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/html/www/whyaojin.cn/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:53:12+08:00 ] 192.168.0.5 106.11.154.164 GET /index.php/index/article/index.html
+[ log ] bxwyx.com/index.php/index/article/index.html [运行时间：0.006092s][吞吐率：164.15req/s] [内存消耗：458.80kb] [文件加载：48]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'bxwyx.com',
+  'user-agent' => 'YisouSpider',
+  'connection' => 'Keep-Alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /var/www/html/www/whyaojin.cn/application/view/msg.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:56:32+08:00 ] 192.168.0.5 106.11.154.164 GET /index.php?a=content&g=Apps&id=5955&m=Wap&token=rcoxbe1410271014
+[ log ] bxwyx.com/index.php?a=content&g=Apps&id=5955&m=Wap&token=rcoxbe1410271014 [运行时间：0.004970s][吞吐率：201.20req/s] [内存消耗：388.28kb] [文件加载：38]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn,en-us,zh-tw,en-gb,en;',
+  'host' => 'bxwyx.com',
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'connection' => 'Keep-Alive',
+  'user-agent' => 'YisouSpider',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'a' => 'content',
+  'g' => 'Apps',
+  'id' => '5955',
+  'm' => 'Wap',
+  'token' => 'rcoxbe1410271014',
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /var/www/html/www/whyaojin.cn/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-10-13T23:56:32+08:00 ] 192.168.0.5 106.11.154.164 GET /index.php/index/article/index.html
+[ log ] bxwyx.com/index.php/index/article/index.html [运行时间：0.006359s][吞吐率：157.25req/s] [内存消耗：458.80kb] [文件加载：48]
+[ info ] [ LANG ] /var/www/html/www/whyaojin.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'bxwyx.com',
+  'user-agent' => 'YisouSpider',
+  'connection' => 'Keep-Alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /var/www/html/www/whyaojin.cn/application/view/msg.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

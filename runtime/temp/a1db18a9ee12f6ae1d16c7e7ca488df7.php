@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"/var/www/html/www/whyaojin.cn/application/index/view/member_pingan.html";i:1507860293;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"/var/www/html/www/whyaojin.cn/application/index/view/member_pingan.html";i:1507908135;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -150,7 +150,7 @@ wx.ready(function () {
 var shareData = {
 title: '欢迎关注<?php echo $user['username']; ?>保险微名片',
 desc: '<?php echo $user['summary']; ?>',
-link: '<?php echo config('config.ss_site_domain'); ?><?php echo url("member/index",["mid"=>input("mid"),"id"=>input("id"),"shareOpenId"=>$user['wecha_id']]); ?>',
+link: '<?php echo config('config.ss_site_domain'); ?><?php echo url("member/index",["mid"=>input("mid"),"id"=>input("id"),"openid"=>$user['wecha_id']]); ?>',
 imgUrl: '<?php echo $user['wechahead']; ?>'
 };
 wx.onMenuShareAppMessage(shareData);
