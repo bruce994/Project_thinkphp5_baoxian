@@ -18,6 +18,15 @@ public function index()
 
     $map['mid'] = ['=',$this->mid];
 
+    if(input("typeid")){
+         $type =  Db::name("article_type")->where(['id'=>['=',input('typeid')]])->field('jump_url')->find();
+         if($type['jump_url']){
+             header('Location: '.$type['jump_url']);
+             exit;
+         }
+     }
+
+
     if(input('act') == 'type'){
         $return = '{"advertiseArea":[],"status":"ok","lock":"1","classDefinition":[{"id":1,"consultTypeName":"资讯","consultTypeCode":"discover"},{"id":2,"consultTypeName":"海报","consultTypeCode":"productPromotion"}],"lock1":"1","lockForProduction":null}';
         echo  $return;
@@ -63,11 +72,14 @@ public function content()
     $this->assign('member', $member);
     $this->assign('user', $user);
 
+     $map['id'] = ['=',input("id")];
+     $vo = Db::name('article_list')->where($map)->find();
+     if($vo['jump_url']){
+         header('Location: '.$vo['jump_url']);
+         exit;
+     }
 
     if(input('act') == 'info'){
-         $map['id'] = ['=',input("id")];
-         $vo = Db::name('article_list')->where($map)->find();
-
         $return = '  {"message":"success","body":{"parameter":"http://caap.pingan.com.cn","productionInfo":{},"info":{"summary":"'.$vo['title'].'","tabNum":"","updatedDate":"2017-09-20 11:24:58.0","infoType":"大话保险","effectDate":{"nanos":0,"time":1505944800000,"minutes":0,"seconds":0,"hours":6,"month":8,"timezoneOffset":-480,"year":117,"day":4,"date":21},"infoCode":"bigTalkInsurance","showCover":"2","production":"","updatedBy":"system","video":"'.compress_html(str_replace('"','\"',htmlspecialchars_decode($vo['video']))).'","content":"'.compress_html(str_replace('"','\"',htmlspecialchars_decode($vo['content']))).'","id":"4e165f3d-3a17-4490-a9f6-98558a31aec7","author":"保险论坛","relayCount":518,"coverImgUrl":"'.config('config.ss_site_domain').$vo['picurl'].'","originalLink":"","title":"'.$vo['title'].'","browseCount":'.$vo['view'].',"createdBy":"system","cancleDate":{"nanos":0,"time":253402271999000,"minutes":59,"seconds":59,"hours":23,"month":11,"timezoneOffset":-480,"year":8099,"day":5,"date":31},"adFrom":"0","isUp":"1","shortName":"","createdDate":"'.date("Y-m-d H:i:s",$vo['addtime']).'"}},"code":"200"}';
         echo  $return;
         exit;

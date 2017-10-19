@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"/var/www/html/www/whyaojin.cn/application/member/view/article_type_edit.html";i:1507711659;s:63:"/var/www/html/www/whyaojin.cn/application/member/view/head.html";i:1507608923;s:65:"/var/www/html/www/whyaojin.cn/application/member/view/footer.html";i:1507608922;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:76:"/var/www/html/www/whyaojin.cn/application/member/view/article_type_edit.html";i:1508381899;s:63:"/var/www/html/www/whyaojin.cn/application/member/view/head.html";i:1507608923;s:65:"/var/www/html/www/whyaojin.cn/application/member/view/footer.html";i:1507608922;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -285,6 +285,13 @@
 
 
                       <div class="form-group">
+                          <label>跳转url：</label>
+                          <input type="text" name="jump_url" value="<?php echo $vo['jump_url']; ?>"  class="form-control "  >
+                      </div>
+
+
+
+                      <div class="form-group">
                           <label>是否我的微站固定：</label>
                           <br/>
                           <label>是　<input type="radio" id="auth" value = '1' name="isWzShow" <?php if($vo['isWzShow'] == 1): ?>checked<?php endif; ?> > &nbsp;&nbsp;
@@ -293,6 +300,9 @@
                             否　<input type="radio" id="auth2" value = "0" name="isWzShow" <?php if($vo['isWzShow'] == 0): ?>checked<?php endif; ?> >
                           </label>
                       </div>
+
+
+
 
                       <div class="form-group">
                           <label>选择模板:</label>

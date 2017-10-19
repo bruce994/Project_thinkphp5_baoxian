@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"/var/www/html/www/whyaojin.cn/application/member/view/article_articlelist_edit.html";i:1507908614;s:63:"/var/www/html/www/whyaojin.cn/application/member/view/head.html";i:1507608923;s:65:"/var/www/html/www/whyaojin.cn/application/member/view/footer.html";i:1507608922;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"/var/www/html/www/whyaojin.cn/application/member/view/article_articlelist_edit.html";i:1508381919;s:63:"/var/www/html/www/whyaojin.cn/application/member/view/head.html";i:1507608923;s:65:"/var/www/html/www/whyaojin.cn/application/member/view/footer.html";i:1507608922;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -308,6 +308,13 @@
                           <label>分享次数：</label>
                           <input type="text" name="share" value="<?php echo $vo['share']; ?>"  class="form-control number"  >
                       </div>
+
+                      <div class="form-group">
+                          <label>跳转url：</label>
+                          <input type="text" name="jump_url" value="<?php echo $vo['jump_url']; ?>"  class="form-control "  >
+                      </div>
+
+
 
 
                       <div class="form-group">

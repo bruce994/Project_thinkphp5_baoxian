@@ -108,6 +108,13 @@
 
 
                       <div class="form-group">
+                          <label>跳转url：</label>
+                          <input type="text" name="jump_url" value="{$vo.jump_url}"  class="form-control "  >
+                      </div>
+
+
+
+                      <div class="form-group">
                           <label>是否我的微站固定：</label>
                           <br/>
                           <label>是　<input type="radio" id="auth" value = '1' name="isWzShow" {if condition="$vo.isWzShow eq 1"}checked{/if} > &nbsp;&nbsp;
@@ -116,6 +123,9 @@
                             否　<input type="radio" id="auth2" value = "0" name="isWzShow" {if condition="$vo.isWzShow eq 0"}checked{/if} >
                           </label>
                       </div>
+
+
+
 
                       <div class="form-group">
                           <label>选择模板:</label>
