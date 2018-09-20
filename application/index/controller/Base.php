@@ -14,54 +14,7 @@ class Base extends \think\Controller
     protected $time;
 
     public function _initialize(){
-        if(empty(input('mid'))){
-            $this->error('mid未指定');
-        }
-        $map['m_id'] = ['=',input('mid')];
-        $member = Db::name('member')->where($map)->find();
-        if(empty($member)){
-            $this->error('公众账号未找到');
-        }
-        $this->mid = input('mid');
-        $this->member = $member;
-        $this->time = time();
-
-
-
-        //获取粉丝信息
-        $fan = Cookie::get('fan_'.input('mid'));
-
-        if(empty($fan)){
-           //授权获取粉丝信息
-            if($member['m_web_auth']){
-                $contro = request()->controller();
-                $action = request()->action();
-                if(empty(input('auth'))){ //web网页授权
-                    header('Location: https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$member['m_appid'].'&redirect_uri='.config("config.ss_site_domain").'/oauth2.php&response_type=code&scope=snsapi_userinfo&state='.input('id').'AAA'.$member['m_id'].'AAA'.$contro.'AAA'.$action.'AAA'.input('shareOpenId').'#wechat_redirect');
-                    exit;
-                }
-            }
-            //END
-
-            if(input('wecha_id')){
-
-                //回复关键字获取粉丝信息
-                if($member['m_isConnent']){
-                    jssdk($member,input('wecha_id'));
-                }
-                //END
-
-                $map = [];
-                $map['wecha_id'] = ['=',input('wecha_id')];
-                $fan = Db::name('userinfo')->where($map)->find();
-                Cookie::set('fan_'.input('mid'),$fan,config("config.ss_cookie_time"));
-            }
-        }
-        $this->fan = $fan;
-        $this->assign('fan', $fan);
-
-        if(empty($fan)) $this->error('未获取粉丝信息，请重新授权');
-        //END
+       
     }
 
 

@@ -105,14 +105,11 @@
             ?>
             <li class="treeview <?php if(request()->param("ss") == 1){echo "active";} ?>">
             <a href="javascript:void(0);">
-                <i class="fa fa-child"></i><span>资讯素材</span>
+                <i class="fa fa-child"></i><span>{:$f["title"]}</span>
                 <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-                <li><a href="{:url("article/index",array("ss"=>1))}"><i class="fa fa-circle-o"></i>资讯设置</a></li>
-                <li><a href="{:url("article/randomPic",array("ss"=>1))}"><i class="fa fa-circle-o"></i>随机图片管理</a></li>
-                <li><a href="{:url("article/type",array("ss"=>1))}"><i class="fa fa-circle-o"></i>资讯分类</a></li>
-                <li><a href="{:url("article/articleList",array("ss"=>1))}"><i class="fa fa-circle-o"></i>资讯素材</a></li>
+                <li><a href="{:url("article/articleList",array("ss"=>1))}"><i class="fa fa-circle-o"></i>数据列表</a></li>
             </ul>
             </li>
             <?php } } ?>
@@ -133,32 +130,6 @@
             </li>
             <?php } } ?>
 
-
-
-            <li class="treeview <?php if(request()->param("ss") == 12){echo "active";} ?>">
-            <a href="#">
-                <i class="fa   fa-adn"></i><span>粉丝广告管理</span>
-                <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="{:url("index/fans",array("ss"=>12))}"><i class="fa fa-circle-o"></i>粉丝管理</a></li>
-                <li><a href="{:url("index/ad",array("ss"=>12))}"><i class="fa fa-circle-o"></i>顶部广告管理</a></li>
-            </ul>
-            </li>
-
-            
-           <li class="treeview <?php if(request()->param("ss") == 2){echo "active";} ?>"">
-            <a href="#">
-              <i class="fa  fa-cog"></i><span>微信设置</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="{:url("index/weixin",array("ss"=>2))}"><i class="fa fa-circle-o"></i>接口配置</a></li>                
-              <!--<li><a href="{:url("System/wxPay",array("ss"=>2))}"><i class="fa fa-circle-o"></i>微信支付配置</a></li>-->
-              <li><a href="{:url("index/diyMenu",array("ss"=>2))}"><i class="fa fa-circle-o"></i>自定义菜单</a></li>                
-              <li><a href="{:url("index/reply",array("ss"=>2))}"><i class="fa fa-circle-o"></i>自定义回复</a></li>                
-            </ul>
-          </li>
 
 
 

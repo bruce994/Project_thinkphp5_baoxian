@@ -15,7 +15,7 @@ return [
     // 服务器地址
     'hostname'        => 'mysql',
     // 数据库名
-    'database'        => 'whyaojin',
+    'database'        => 'www1',
     // 用户名
     'username'        => 'root',
     // 密码

@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html data-dpr="1" max-width="750" style="font-size: 25.875px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="hotcss" content="max-width=750">
+<meta name="hotcss" content="design-width=750">
+
+<title>贷款</title>
+<meta name="keywords" content="贷款">
+<meta name="description" content="贷款">
+
+
+
+<link rel="stylesheet" type="text/css" href="{:config('config.ss_site_domain')}application/index/view/static/jr_files/swiper3.08.min.css">
+<link rel="stylesheet" type="text/css" href="{:config('config.ss_site_domain')}application/index/view/static/jr_files/m_base.css">
+<link rel="stylesheet" type="text/css" href="{:config('config.ss_site_domain')}application/index/view/static/jr_files/style.css">
+<script src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/hotcss.js"></script>
+<script src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/jquery-1.9.1.min.js"></script>
+
+<script src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/common.js" type="text/javascript"></script>
+<link rel="stylesheet" href="{:config('config.ss_site_domain')}application/index/view/static/jr_files/layer.css" id="layui_layer_skinlayercss" style=""></head>
+<body>
+<div class="m-page">
+  <!--loadwarp-->
+  <section id="loadwarp" class="load" style=" display:none">
+    <div class="loader_wp"><i class="loader"></i><i class="progress">0%</i></div>
+  </section>
+  <div class="pagecont">
+    <!--banner-->
+    <section class="banner">
+      <div class="pic"> <img src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/pic_head.jpg"> </div> 
+       <div class="pic"> <img src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/pic_center.jpg"> </div> 
+      <div class="pic"> <img src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/pic_01.jpg"> </div> 
+      <div class="zxys-form">
+      <form name="messageForm1" method="post" action="http://houtai.xiangdangdang196.com/xyk/save.do" id="messageForm1" class="form-box">  
+            <ul> 
+              <li>
+                <input type="text" class="offter_text width1" placeholder="输入您的真实姓名" name="NAME" id="NAME">
+              </li> 
+              <li>
+                <input type="text" class="offter_text width1" placeholder="输入您的手机号码" name="PHONE" id="PHONE">
+              </li> 
+              <li>
+                <input type="text" class="offter_text width1" placeholder="请填写申请地址" name="ADDRESS" id="ADDRESS">
+              </li> 
+              <li>
+                <input type="text" class="offter_text width1" placeholder="请填写身份证号码" name="IDCARD" id="IDCARD">
+              </li> 
+              <li>
+                <select id="AMOUNT_S" name="AMOUNT_S" tip="请选期望额度">
+                    <option value="">请选期望额度</option> 
+                    <option value="50000" title="">5万</option>
+                    <option value="60000" title="">6万</option>
+                    <option value="70000" title="">7万</option>
+                    <option value="80000" title="">8万</option>
+                    <option value="90000" title="">9万</option>
+                    <option value="100000" title="">10万</option>
+                    <option value="110000" title="">11万</option>
+                    <option value="120000" title="">12万</option>
+                    <option value="130000" title="">13万</option>
+                    <option value="140000" title="">14万</option>
+                    <option value="150000" title="">15万</option>
+                    <option value="160000" title="">16万</option>
+                    <option value="170000" title="">17万</option>
+                    <option value="180000" title="">18万</option>
+                    <option value="190000" title="">19万</option>
+                    <option value="200000" title="">20万</option>
+                    <option value="210000" title="">21万</option>
+                    <option value="220000" title="">22万</option>
+                    <option value="230000" title="">23万</option>
+                    <option value="240000" title="">24万</option>
+                    <option value="250000" title="">25万</option>
+                    <option value="260000" title="">26万</option>
+                    <option value="270000" title="">27万</option>
+                    <option value="280000" title="">28万</option>
+                    <option value="290000" title="">29万</option>
+                    <option value="300000" title="">30万</option>
+                </select>
+                <em class="icon-right"></em> 
+              </li>
+              <li>
+                <select id="TIMELIMIT" name="TIMELIMIT" tip="请选择贷款期限">
+                  <option value="">请选择贷款期限</option>
+                  <option value="1年">1年(12期)</option>  
+                  <option value="2年">2年(24期)</option>  
+                  <option value="3年">3年(36期)</option>  
+                  <option value="4年">4年(48期)</option>  
+                  <option value="5年">5年(60期)</option>   
+                </select>
+                <em class="icon-right"></em> 
+            </li>
+            </ul>
+          </form>
+      <div class="pic" id="submit"><img src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/pic_03.jpg"></div>
+      <div class="pic" ><img src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/pic_end.jpg"></div>
+      </div>
+    </section>   
+      
+    <section class="record_wrapper">
+      <script type="text/javascript">
+                        //滚动插件
+                        /*
+                        (function($) {
+                            $.fn.extend({
+                                Scroll: function(opt, callback) {
+                                    //参数初始化
+                                    if(!opt) var opt = {};
+                                    var _this = this.eq(0).find("ul:first");
+                                    var lineH = _this.find("li:first").height(),
+                                        //获取行高
+                                        line = opt.line ? parseInt(opt.line, 20) : parseInt(this.height() / lineH, 10),
+                                        //每次滚动的行数，默认为一屏，即父容器高度
+                                        speed = opt.speed ? parseInt(opt.speed, 10) : 800,
+                                        //卷动速度，数值越大，速度越慢（毫秒）
+                                        timer = opt.timer ? parseInt(opt.timer, 10) : 8000; //滚动的时间间隔（毫秒）
+                                    if(line == 0) line = 1;
+                                    var upHeight = 0 - line * lineH;
+                                    //滚动函数
+                                    scrollUp = function() {
+                                        _this.animate({
+                                                marginTop: upHeight
+                                            },
+                                            speed,
+                                            function() {
+                                                for(i = 1; i <= line; i++) {
+                                                    _this.find("li:first").appendTo(_this);
+                                                }
+                                                _this.css({
+                                                    marginTop: 0
+                                                });
+                                            });
+                                    }
+                                    //鼠标事件绑定
+                                    _this.hover(function() {
+                                            clearInterval(timerID);
+                                        },
+                                        function() {
+                                            timerID = setInterval("scrollUp()", timer);
+                                        }).mouseout();
+                                }
+                            })
+                        })(jQuery);
+
+                        $(document).ready(function() {
+                            $("#scrollDiv").Scroll({
+                                line: 1,
+                                speed: 600,
+                                timer: 1000
+                            });
+                        });*/
+                    </script>
+      <!--div class="scroll">
+        <div id="scrollDiv">
+          <ul style="margin-top: 0px;"> 
+          <li> <span>冯先生</span> <span>183*****2120</span> <span>11分钟前</span> </li><li> <span>孙先生</span> <span>134*****1289</span> <span>13分钟前</span> </li><li> <span>古小姐</span> <span>189*****2433</span> <span>18分钟前</span> </li><li> <span>万先生</span> <span>180*****2332</span> <span>21分钟前</span> </li><li> <span>何先生</span> <span>187*****2445</span> <span>23分钟前</span> </li><li> <span>刘先生</span> <span>156*****2342</span> <span>30分钟前</span> </li><li> <span>刘先生 </span> <span>132*****8632</span> <span>3分钟前</span> </li><li> <span>康先生</span> <span>183*****4512</span> <span>9分钟前</span> </li><li> <span>王先生</span> <span>138*****7543</span> <span>10分钟前</span> </li><li> <span>马小姐</span> <span>152*****8962</span> <span>11分钟前</span> </li></ul>
+        </div>
+      </div-->
+    </section> 
+    <!--底部按钮-->
+    <div style="text-align:center;font-size:0.512rem;margin:8px auto;">
+         <span style="margin:5px 30px;">市场有风险，投资需谨慎</span><br> 
+         <span style="margin:5px 30px;">Copyright@东莞市宣旭投资咨询有限公司.粤icp备18075888号-1</span><br>
+         <span style="margin:5px 30px;">合作放款银行:宁波通商银行</span><br>
+         <span style="margin:5px 30px;">具体金额以个人情况而定 </span><br>
+     </div>
+  </div>
+</div>
+<!--m-page-->  
+<script src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/jweixin-1.0.0.js"></script>
+<script src="{:config('config.ss_site_domain')}application/index/view/static/jr_files/layer.js"></script> 
+<script>
+            
+         
+            $(document).ready(function() {
+            //身份证检验
+var vcity={ 11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",
+  21:"辽宁",22:"吉林",23:"黑龙江",31:"上海",32:"江苏",
+  33:"浙江",34:"安徽",35:"福建",36:"江西",37:"山东",41:"河南",
+  42:"湖北",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆",
+  51:"四川",52:"贵州",53:"云南",54:"西藏",61:"陕西",62:"甘肃",
+  63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外"
+};
+function checkCard(card){
+console.log(card);
+
+
+ if(card){
+    card = card.toUpperCase();
+  }
+  //是否为空
+  if(!card||!isCardNo(card)||!checkProvince(card)||!checkBirthday(card)||!checkParity(card)){
+    jQuery(".sf_list").focus();
+    return false;
+  }
+  return true;
+};
+//检查号码是否符合规范，包括长度，类型
+function isCardNo(card){
+  //身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X
+  var reg = /(^\d{15}$)|(^\d{17}(\d|X)$)/;
+  if(reg.test(card) === false){
+    return false;
+  }
+  return true;
+};
+//取身份证前两位,校验省份
+function checkProvince(card){
+  var province = card.substr(0,2);
+  if(vcity[province] == undefined) {
+    return false;
+  }
+  return true;
+};
+//检查生日是否正确
+function checkBirthday(card){
+  var len = card.length;
+  //身份证15位时，次序为省（3位）市（3位）年（2位）月（2位）日（2位）校验位（3位），皆为数字
+  if(len == '15'){
+    var re_fifteen = /^(\d{6})(\d{2})(\d{2})(\d{2})(\d{3})$/;
+    var arr_data = card.match(re_fifteen);
+    var year = arr_data[2];
+    var month = arr_data[3];
+    var day = arr_data[4];
+    var birthday = new Date('19'+year+'/'+month+'/'+day);
+    return verifyBirthday('19'+year,month,day,birthday);
+  }
+  //身份证18位时，次序为省（3位）市（3位）年（4位）月（2位）日（2位）校验位（4位），校验位末尾可能为X
+  if(len == '18'){
+    var re_eighteen = /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/;
+    var arr_data = card.match(re_eighteen);
+    var year = arr_data[2];
+    var month = arr_data[3];
+    var day = arr_data[4];
+    var birthday = new Date(year+'/'+month+'/'+day);
+    return verifyBirthday(year,month,day,birthday);
+  }
+  return false;
+};
+//校验日期
+function verifyBirthday(year,month,day,birthday){
+  var now = new Date();
+  var now_year = now.getFullYear();
+  //年月日是否合理
+  if(birthday.getFullYear() == year && (birthday.getMonth() + 1) == month && birthday.getDate() == day){
+    //判断年份的范围（3岁到100岁之间)
+    var time = now_year - year;
+    if(time >= 3 && time <= 100)
+    {
+      return true;
+    }
+    return false;
+  }
+  return false;
+};
+//校验位的检测
+function checkParity(card){
+  //15位转18位
+  card = changeFivteenToEighteen(card);
+  var len = card.length;
+  if(len == '18'){
+    var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+    var arrCh = new Array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+    var cardTemp = 0, i, valnum;
+    for(i = 0; i < 17; i ++){
+      cardTemp += card.substr(i, 1) * arrInt[i];
+    }
+    valnum = arrCh[cardTemp % 11];
+    if(valnum == card.substr(17, 1)){
+      return true;
+    }
+    return false;
+  }
+  return false;
+};
+//15位转18位身份证号
+function changeFivteenToEighteen(card){
+  if(card.length == '15'){
+    var arrInt = new array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+    var arrCh = new array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+    var cardTemp = 0, i;
+    card = card.substr(0, 6) + '19' + card.substr(6, card.length - 6);
+    for(i = 0; i < 17; i ++){
+      cardTemp += card.substr(i, 1) * arrInt[i];
+    }
+    card += arrCh[cardTemp % 11];
+    return card;
+  }
+  return card;
+}; 
+                function getQueryString(name) { 
+                    var r = window.location.href.match(/\d{10,}/);
+                    if (r != null) return r[0];
+                    return null;
+                }
+                var url=document.referrer;
+                var istrue = false;
+                $('#submit').click(function(){
+                
+                         var pattern = /^[\u4E00-\u9FA5]{1,6}$/; 
+                        if ($("#messageForm1").find("#NAME").val().length < 2||!pattern.test($("#messageForm1").find("#NAME").val())) 
+                        { 
+                            alert("请输入正确的姓名"); 
+                            $("#messageForm1").find("#NAME").focus(); 
+                            return ; 
+                        }
+                        if (($("#messageForm1").find("#ADDRESS").val().length < 2) )
+                        { 
+                            alert("请输入您的所在地址"); 
+                            $("#messageForm1").find("#ADDRESS").focus(); 
+                            return ; 
+                        }
+                        var tel = $("#messageForm1").find("#PHONE").val();//获取输入的手机号
+                　　　　var yidongreg = /^(134[012345678]\d{7}|1[34578][012356789]\d{8})$/;
+                　　　　var dianxinreg = /^1[3578][01379]\d{8}$/;
+                　　　　var liantongreg = /^1[34578][01256]\d{8}$/;
+                　　　　//var reg = /^1[3|4|5|7|8]\d{9}$/;//这一种也可以
+                　　　　if (!yidongreg.test(tel) && !dianxinreg.test(tel) && !liantongreg.test(tel))
+                　　　　{ 
+                            alert("请输入正确的手机号码");
+                            $("#messageForm1").find("#PHONE").focus();
+                            return ;
+                　　　　} 
+                
+                        if ( !checkCard($("#messageForm1").find("#IDCARD").val())) 
+                        { 
+                            alert("请输入正确的身份证号码");
+                            $("#messageForm1").find("#IDCARD").focus(); 
+                            return ; 
+                        } 
+                         if ($("#messageForm1").find("#AMOUNT_S").val().length < 1) 
+                        { 
+                            alert("请输入您的期望额度"); 
+                            $("#messageForm1").find("#AMOUNT_S").focus(); 
+                            return ; 
+                        }
+                         if ($("#messageForm1").find("#TIMELIMIT").val().length < 1) 
+                        { 
+                            alert("请输入您的贷款期限"); 
+                            $("#messageForm1").find("#TIMELIMIT").focus(); 
+                            return ; 
+                        }
+                        if(istrue){alert("无需重复提交.");return;}
+                        istrue = true;
+                        $.post("/index.php/index/index/index/act/insert.html",
+                            {
+                                URL:url,
+                                OTHERPM:location.href,
+                                INFOTYPE:getQueryString("1"),
+                                NAME: $("#messageForm1").find("#NAME").val(),
+                                ADDRESS: $("#messageForm1").find("#ADDRESS").val(),
+                                PHONE: $("#messageForm1").find("#PHONE").val(),
+                                IDCARD: $("#messageForm1").find("#IDCARD").val(),
+                                AMOUNT_S: $("#messageForm1").find("#AMOUNT_S").val(),
+                                TIMELIMIT: $("#messageForm1").find("#TIMELIMIT").val(),
+                                TYPE:"1"
+                            },
+                            function(data){
+                                if(data.code=="1"){
+                                 alert("提交成功!");
+                                }
+                                window.location.reload();
+                            }
+                        );
+                    });
+            })  
+        </script>
+
+</body></html>

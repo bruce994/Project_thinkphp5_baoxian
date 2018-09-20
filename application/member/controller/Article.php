@@ -4,7 +4,7 @@ use think\Db;
 use think\Request;
 use think\Cookie;
 use think\Cache;
-
+use think\Loader;
 
 use app\member\controller\Base;
 
@@ -177,6 +177,54 @@ class Article extends Base
       }
     }
 
+
+    public function exportData(){
+        ini_set('memory_limit', '-1');
+        $map['mid'] = ['=',1];
+        $list = $this->home($map,['id'=>'desc'],'article_list');
+        $data = array();
+        $data[] = array("编号","真实姓名","手机号","申请地址","身份证号码","期望额度","贷款期限","来源链接","添加时间");
+        $i=1;
+        foreach($list as $value){
+            $data[] = array($i,$value['NAME'],$value['PHONE'],$value['ADDRESS'],$value['IDCARD'],$value['AMOUNT_S'],$value['TIMELIMIT'],$value['URL'],date("Y-m-d H:i:s",$value['addtime']));
+            $i++;
+        }
+
+
+             // Create new PHPExcel object
+             $objPHPExcel = new \PHPExcel();
+             // Set document properties
+             $objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
+                              ->setLastModifiedBy("Maarten Balliauw")
+                              ->setTitle("Office 2007 XLSX Test Document")
+                              ->setSubject("Office 2007 XLSX Test Document")
+                              ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
+                              ->setKeywords("office 2007 openxml php")
+                              ->setCategory("Test result file");
+                 // Add some data
+                 for ($i=1;$i<=count($data);$i++)
+                 {
+                     $top=array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+                     $columns = $data[$i-1];
+                     for ($j=0; $j < count($columns) ; $j++) {
+                         $objPHPExcel->getActiveSheet()->setCellValue($top[$j].$i, $columns[$j]);
+                     }
+                 }
+                 // Miscellaneous glyphs, UTF-8
+                 // Rename worksheet
+                 $objPHPExcel->getActiveSheet()->setTitle('Simple');
+                 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+                 $objPHPExcel->setActiveSheetIndex(0);
+                 // Redirect output to a clients web browser (Excel5)
+                         // Redirect output to a client鈥檚 web browser (Excel2007)
+                 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+                 header('Content-Disposition: attachment;filename="cutomer.xlsx"');
+                 header('Cache-Control: max-age=0');
+                 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+                 $objWriter->save('php://output');
+                 exit;
+
+    }
 
 
 }

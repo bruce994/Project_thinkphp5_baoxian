@@ -120,7 +120,6 @@ class Base extends \think\Controller
                     $auth['avatar'] =  config('config.ss_web_root').'/dist/img/user2-160x160.jpg';
                  }
                  Cookie::set(config('config.ss_auth_member_key'),$auth);
-
                  $this->success('登陆成功！',url("Index/index"));
               }
             }

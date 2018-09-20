@@ -14,7 +14,7 @@ class Article extends Base
 
 public function index()
 {
-   // var_dump($this->fan);
+    var_dump($this->fan);
 
     $map['mid'] = ['=',$this->mid];
 
