@@ -190,9 +190,10 @@ class Article extends Base
             $i++;
         }
 
-
+             Loader::import('excel.Classes.PHPExcel');
              // Create new PHPExcel object
              $objPHPExcel = new \PHPExcel();
+
              // Set document properties
              $objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
                               ->setLastModifiedBy("Maarten Balliauw")
@@ -220,7 +221,7 @@ class Article extends Base
                  header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
                  header('Content-Disposition: attachment;filename="cutomer.xlsx"');
                  header('Cache-Control: max-age=0');
-                 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+                 $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
                  $objWriter->save('php://output');
                  exit;
 
